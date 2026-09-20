@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MODULE: app
+      HAS_SIGNING_KEY: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
 
     steps:
       - name: Checkout
@@ -43,7 +44,7 @@ jobs:
       # ANDROID_KEY_ALIAS - signing key alias
       # ANDROID_KEY_PASSWORD - signing key password
       - name: Restore release keystore
-        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+        if: env.HAS_SIGNING_KEY == 'true'
         env:
           KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
         run: |
@@ -51,7 +52,7 @@ jobs:
           test -s "$RUNNER_TEMP/release.keystore"
 
       - name: Build signed release APK and AAB
-        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+        if: env.HAS_SIGNING_KEY == 'true'
         env:
           ORG_GRADLE_PROJECT_RELEASE_STORE_FILE: ${{ runner.temp }}/release.keystore
           ORG_GRADLE_PROJECT_RELEASE_STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
@@ -63,7 +64,7 @@ jobs:
             :${MODULE}:bundleRelease
 
       - name: Build unsigned test release APK and AAB
-        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 == '' }}
+        if: env.HAS_SIGNING_KEY != 'true'
         run: |
           ./gradlew --no-daemon --stacktrace \
             :${MODULE}:assembleRelease \
@@ -99,7 +100,7 @@ jobs:
       - name: Check signing configuration
         if: always()
         run: |
-          if [ -z "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" ]; then
+          if [ "$HAS_SIGNING_KEY" != "true" ]; then
             echo 'WARNING: signing secrets are not configured.'
             echo 'The Gradle project must either provide its own release signingConfig or the build will fail.'
           fi
