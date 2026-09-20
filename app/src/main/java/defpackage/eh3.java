@@ -1,0 +1,27 @@
+package defpackage;
+
+import com.google.android.gms.ads.query.QueryInfo;
+import com.google.android.gms.ads.query.QueryInfoGenerationCallback;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class eh3 extends QueryInfoGenerationCallback {
+    public final tp1 a;
+    public final hh3 b;
+
+    public eh3(hh3 hh3Var, tp1 tp1Var) {
+        this.a = tp1Var;
+        this.b = hh3Var;
+    }
+
+    @Override // com.google.android.gms.ads.query.QueryInfoGenerationCallback
+    public final void onFailure(String str) {
+        this.b.c = str;
+        this.a.c();
+    }
+
+    @Override // com.google.android.gms.ads.query.QueryInfoGenerationCallback
+    public final void onSuccess(QueryInfo queryInfo) {
+        this.b.b = queryInfo;
+        this.a.c();
+    }
+}

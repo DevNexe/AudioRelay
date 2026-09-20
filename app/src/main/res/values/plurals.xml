@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="hours_ago">
+        <item quantity="one">an hour ago</item>
+        <item quantity="two">%1$d hours ago</item>
+        <item quantity="few">%1$d hours ago</item>
+        <item quantity="many">%1$d hours ago</item>
+        <item quantity="other">%1$d hours ago</item>
+    </plurals>
+    <plurals name="minutes_ago">
+        <item quantity="one">a minute ago</item>
+        <item quantity="two">%1$d minutes ago</item>
+        <item quantity="few">%1$d minutes ago</item>
+        <item quantity="many">%1$d minutes ago</item>
+        <item quantity="other">%1$d minutes ago</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="one">%d new notification</item>
+        <item quantity="other">%d new notifications</item>
+    </plurals>
+</resources>

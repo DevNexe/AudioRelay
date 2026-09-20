@@ -1,0 +1,50 @@
+package com.google.android.gms.internal.ads;
+
+import defpackage.ru6;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class zzghc extends zzgon implements zzgpy {
+    private static final zzghc zzb;
+    private int zze;
+    private int zzf;
+
+    static {
+        zzghc zzghcVar = new zzghc();
+        zzb = zzghcVar;
+        zzgon.i(zzghc.class, zzghcVar);
+    }
+
+    public static zzghb zzc() {
+        return (zzghb) zzb.j();
+    }
+
+    public static zzghc zze(zzgnf zzgnfVar, zzgnz zzgnzVar) {
+        return (zzghc) zzgon.f(zzb, zzgnfVar, zzgnzVar);
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzgon
+    public final Object k(int i, zzgon zzgonVar) {
+        int i2 = i - 1;
+        if (i2 == 0) {
+            return (byte) 1;
+        }
+        int i3 = 0;
+        if (i2 == 2) {
+            return new ru6(zzb, "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u000b\u0002\u000b", new Object[]{"zze", "zzf"});
+        }
+        if (i2 == 3) {
+            return new zzghc();
+        }
+        if (i2 == 4) {
+            return new zzghb(i3);
+        }
+        if (i2 != 5) {
+            return null;
+        }
+        return zzb;
+    }
+
+    public final int zza() {
+        return this.zze;
+    }
+}

@@ -1,0 +1,40 @@
+package j$.util.stream;
+
+/* JADX INFO: loaded from: classes2.dex */
+abstract class H0 implements F0 {
+    protected final F0 a;
+    protected final F0 b;
+    private final long c;
+
+    H0(F0 f0, F0 f1) {
+        this.a = f0;
+        this.b = f1;
+        this.c = f0.count() + f1.count();
+    }
+
+    @Override // j$.util.stream.F0
+    public /* bridge */ /* synthetic */ E0 a(int i) {
+        return (E0) a(i);
+    }
+
+    @Override // j$.util.stream.F0
+    public final F0 a(int i) {
+        if (i == 0) {
+            return this.a;
+        }
+        if (i == 1) {
+            return this.b;
+        }
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override // j$.util.stream.F0
+    public final long count() {
+        return this.c;
+    }
+
+    @Override // j$.util.stream.F0
+    public final int j() {
+        return 2;
+    }
+}

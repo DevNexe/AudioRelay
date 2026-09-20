@@ -1,0 +1,26 @@
+package defpackage;
+
+import com.google.auto.value.AutoValue;
+
+/* JADX INFO: loaded from: classes.dex */
+@AutoValue
+public abstract class k52 {
+
+    @AutoValue.Builder
+    public static abstract class QnHx {
+    }
+
+    public abstract Integer a();
+
+    public abstract long b();
+
+    public abstract long c();
+
+    public abstract gn2 d();
+
+    public abstract byte[] e();
+
+    public abstract String f();
+
+    public abstract long g();
+}

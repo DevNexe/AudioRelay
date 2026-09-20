@@ -1,0 +1,16 @@
+package com.google.android.gms.internal.ads;
+
+import android.view.MotionEvent;
+import org.json.JSONObject;
+
+/* JADX INFO: loaded from: classes3.dex */
+public interface zzbln {
+    /* JADX INFO: renamed from: zza */
+    JSONObject mo46zza();
+
+    JSONObject zzb();
+
+    void zzc();
+
+    void zzd(MotionEvent motionEvent);
+}

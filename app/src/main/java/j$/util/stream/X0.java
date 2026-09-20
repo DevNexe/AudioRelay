@@ -1,0 +1,53 @@
+package j$.util.stream;
+
+import j$.util.Spliterator;
+import j$.util.function.Consumer;
+import j$.util.function.IntFunction;
+
+/* JADX INFO: loaded from: classes2.dex */
+final class X0 extends Z0 implements D0 {
+    X0() {
+    }
+
+    @Override // j$.util.stream.Z0, j$.util.stream.F0
+    public final E0 a(int i) {
+        throw new IndexOutOfBoundsException();
+    }
+
+    @Override // j$.util.stream.Z0, j$.util.stream.F0
+    public final /* bridge */ /* synthetic */ F0 a(int i) {
+        a(i);
+        throw null;
+    }
+
+    @Override // j$.util.stream.E0
+    public final Object b() {
+        return AbstractC1616w0.f;
+    }
+
+    @Override // j$.util.stream.F0
+    /* JADX INFO: renamed from: f, reason: merged with bridge method [inline-methods] */
+    public final /* synthetic */ void e(Long[] lArr, int i) {
+        AbstractC1616w0.B0(this, lArr, i);
+    }
+
+    @Override // j$.util.stream.F0
+    public final /* synthetic */ void forEach(Consumer consumer) {
+        AbstractC1616w0.E0(this, consumer);
+    }
+
+    @Override // j$.util.stream.Z0, j$.util.stream.F0
+    public final /* synthetic */ F0 q(long j, long j2, IntFunction intFunction) {
+        return AbstractC1616w0.H0(this, j, j2);
+    }
+
+    @Override // j$.util.stream.F0
+    public final j$.util.L spliterator() {
+        return j$.util.b0.d();
+    }
+
+    @Override // j$.util.stream.F0
+    public final Spliterator spliterator() {
+        return j$.util.b0.d();
+    }
+}
